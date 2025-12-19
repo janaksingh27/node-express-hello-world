@@ -2,17 +2,17 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]  # Master branch pe push hone par workflow trigger hoga
 
 jobs:
-  build-and-deploy:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repo
       uses: actions/checkout@v3
 
-    - name: Setup Node
+    - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 18
